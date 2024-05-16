@@ -69,7 +69,7 @@ void Automata::cancel() {
         cash = 0;
         list.clear();
         state = CHECK;
-        std::cout << "Order canceled. Please make a new selection." << std::endl;
+        std::cout << "Order canceled. New selection." << std::endl;
     }
 }
 
