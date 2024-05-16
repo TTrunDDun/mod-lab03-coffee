@@ -15,7 +15,7 @@ TEST(AutomataTest, TEST1) {
     d.on();
     d.on();
     d.off();
-    EXPECT_EQ(OFF, d.getState());
+    EXPECT_EQ(OFF, d.getstate());
 }
 
 TEST(AutomataTest, TEST2) {
@@ -41,7 +41,7 @@ TEST(AutomataTest, TEST4) {
     d.choice(4);
     d.cook(4);
     d.finish(4);
-    EXPECT_EQ(WAIT, d.getState());
+    EXPECT_EQ(WAIT, d.getstate());
 }
 
 TEST(AutomataTest, TEST5) {
@@ -59,7 +59,7 @@ TEST(AutomataTest, TEST6) {
     d.choice(5);
     d.cook(5);
     d.finish(5);
-    EXPECT_EQ(WAIT, d.getState());
+    EXPECT_EQ(WAIT, d.getstate());
 }
 
 TEST(AutomataTest, TEST7) {
