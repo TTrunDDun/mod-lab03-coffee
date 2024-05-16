@@ -35,8 +35,8 @@ void Automata::etmenu() {
     }
 }
 
-void Automata::getstate() {
-    std::cout << "Current state: " << state << std::endl;
+states Automata::getstate() {
+    return state;
 }
 
 void Automata::choice(std::string drink) {
