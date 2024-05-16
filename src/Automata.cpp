@@ -79,7 +79,7 @@ void Automata::cook() {
         std::cout << "Cooking your coffee..." << std::endl;
         state = WAIT;
     } else {
-        state = CHECK;
+        state = WAIT;
     }
 }
 
