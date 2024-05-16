@@ -11,8 +11,20 @@ enum states { OFF, WAIT, ACCEPT, CHECK, COOK };
 class Automata {
  private:
     int cash;
-    std::string menu[7];
-    int prices[7];
+    std::string menu[7] = { "Capuchino",
+        "Raf",
+        "Americano",
+        "Latte",
+        "Flat White",
+        "Espresso",
+        "Dopio" };
+    int prices[7] = { 120,
+        150,
+        80,
+        140,
+        150,
+        50,
+        100 };
     states state;
     std::list<std::string> list;
 
@@ -23,7 +35,7 @@ class Automata {
     void coin(int coins);
     void etmenu();
     void getstate();
-    void choice();
+    void choice(std:: string drink);
     void check();
     void cancel();
     void cook();
