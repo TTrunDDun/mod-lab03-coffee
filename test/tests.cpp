@@ -10,56 +10,45 @@ class AutomataTest : public testing::Test {
 
 TEST(AutomataTest, TEST1) {
     Automata d;
-    d.on();
     d.off();
-    d.on();
-    d.on();
-    d.off();
-    EXPECT_EQ(OFF, d.getstate());
+    EXPECT_EQ(d.getstate(), states::OFF);
 }
 
 TEST(AutomataTest, TEST2) {
     Automata d;
     d.on();
-    d.coin(9);
-    d.choice(3);
-    EXPECT_EQ(false, d.check(3));
+    d.off();
+    EXPECT_EQ(d.getstate(), states::OFF);
 }
 
 TEST(AutomataTest, TEST3) {
     Automata d;
     d.on();
-    d.coin(5);
-    d.choice(3);
-    EXPECT_EQ(false, d.check(3));
+    d.etmenu();
+    EXPECT_EQ(d.getstate(), states::WAIT);
 }
 
 TEST(AutomataTest, TEST4) {
     Automata d;
     d.on();
     d.coin(600);
-    d.choice(4);
-    d.cook(4);
-    d.finish(4);
-    EXPECT_EQ(WAIT, d.getstate());
+    EXPECT_EQ(d.getstate(), states::ACCEPT);
 }
 
 TEST(AutomataTest, TEST5) {
     Automata d;
     d.on();
-    d.coin(33);
-    d.choice(3);
-    EXPECT_EQ(false, d.check(3));
+    d.coin(10);
+    d.cancel();
+    EXPECT_EQ(d.getstate(), states::WAIT);
 }
 
 TEST(AutomataTest, TEST6) {
     Automata d;
     d.on();
     d.coin(3040);
-    d.choice(5);
-    d.cook(5);
-    d.finish(5);
-    EXPECT_EQ(WAIT, d.getstate());
+    d.choice(0);
+    EXPECT_EQ(d.getstate(), states::WAIT);
 }
 
 TEST(AutomataTest, TEST7) {
@@ -67,7 +56,7 @@ TEST(AutomataTest, TEST7) {
     d.on();
     d.coin(3);
     d.choice(3);
-    EXPECT_EQ(false, d.check(3));
+    EXPECT_EQ(d.getstate(), states::WAIT);
 }
 
 
@@ -76,23 +65,22 @@ TEST(AutomataTest, TEST8) {
     d.on();
     d.coin(33);
     d.choice(6);
-    EXPECT_EQ(false, d.check(6));
+    EXPECT_EQ(d.getstate(), states::WAIT);
 }
 
 
 TEST(AutomataTest, TEST9) {
     Automata d;
     d.on();
-    d.coin(43);
+    d.coin(300);
     d.choice(1);
-    EXPECT_EQ(false, d.check(1));
+    EXPECT_EQ(d.getState(), states::ACCEPT);
 }
 
 
 TEST(AutomataTest, TEST10) {
     Automata d;
     d.on();
-    d.coin(33);
-    d.choice(0);
-    EXPECT_EQ(false, d.check(0));
+    d.finish();
+    EXPECT_EQ(d.getState(), states::WAIT);
 }
