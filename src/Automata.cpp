@@ -4,21 +4,9 @@
 #include <iostream>
 
 
-Automata::Automata() : cash(0), state(states::OFF) {
-    std::string menu[7] = { "Capuchino",
-        "Raf",
-        "Americano",
-        "Latte",
-        "Flat White",
-        "Espresso",
-        "Dopio"};
-    int prices[7] = { 120,
-        150,
-        80,
-        140,
-        150,
-        50,
-        100 };
+Automata::Automata() {
+    cash = 0;
+    state = OFF;
 }
 
 void Automata::on() {
@@ -41,7 +29,7 @@ void Automata::coin(int coins) {
 }
 void Automata::etmenu() {
     std::cout << "Choose a coffee"<< std::endl << "Menu:" << std::endl;
-    for (int i = 0; i < 7; i++) {
+    for (size_t i = 0; i < 7; i++) {
         std::cout << "(- " << menu[i];
         std::cout << ": price " << prices[i] << ")" << std::endl;
     }
@@ -51,12 +39,11 @@ void Automata::getstate() {
     std::cout << "Current state: " << state << std::endl;
 }
 
-void Automata::choice() {
-    std::string drink;
+void Automata::choice(std::string drink) {
     std::cout << "Enter your choice: ";
-    std::cin >> drink;
     list.push_front(drink);
 }
+
 
 void Automata::check() {
     int total = 0;
@@ -72,6 +59,7 @@ void Automata::check() {
         std::cout << "Payment accepted. Please waitk." << std::endl;
     } else {
         std::cout << "Please insert more.";
+        state = WAIT;
         std::cout << std::endl;
     }
 }
@@ -84,7 +72,11 @@ void Automata::cancel() {
 }
 
 void Automata::cook() {
-    std::cout << "Cooking your coffee..." << std::endl;
+    if (state = ACCEPT) {
+        std::cout << "Cooking your coffee..." << std::endl;
+    } else {
+        state = WAIT;
+    }
 }
 
 void Automata::finish() {
