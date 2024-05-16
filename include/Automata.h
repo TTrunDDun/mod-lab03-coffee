@@ -9,13 +9,14 @@
 enum states { OFF, WAIT, ACCEPT, CHECK, COOK };
 
 class Automata {
-private:
+ private:
     int cash;
     std::string menu[7];
     int prices[7];
     states state;
     std::list<std::string> list;
-public:
+
+ public:
     Automata();
     void on();
     void off();
