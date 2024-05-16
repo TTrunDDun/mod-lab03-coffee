@@ -34,7 +34,7 @@ class Automata {
     void off();
     void coin(int coins);
     void etmenu();
-    void getstate();
+    states getstate();
     void choice(std:: string drink);
     void check();
     void cancel();
