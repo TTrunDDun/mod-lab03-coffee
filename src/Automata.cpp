@@ -42,7 +42,8 @@ void Automata::coin(int coins) {
 void Automata::etmenu() {
     std::cout << "Choose a coffee"<< std::endl << "Menu:" << std::endl;
     for (int i = 0; i < 7; i++) {
-        std::cout << "(- " << menu[i] << ": price " << prices[i] << ")" << std::endl;
+        std::cout << "(- " << menu[i];
+        std::cout << ": price " << prices[i] << ")" << std::endl;
     }
 }
 
@@ -70,7 +71,8 @@ void Automata::check() {
         state = ACCEPT;
         std::cout << "Payment accepted. Please wait for your drink." << std::endl;
     } else {
-        std::cout << "Not enough money. Please insert more." << std::endl;
+        std::cout << "Not enough money.";
+        std::cout << "Please insert more." << std::endl;
     }
 }
 
