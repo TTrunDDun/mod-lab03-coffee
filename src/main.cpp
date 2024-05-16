@@ -7,9 +7,9 @@ int main() {
     d.on();
     d.etmenu();
     d.coin(10);
-    d.coin(20);
+    d.coin(1222);
     d.getstate();
-    d.choice();
+    d.choice("Raf");
     d.check();
     d.cook();
     d.finish();
