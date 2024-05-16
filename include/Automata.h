@@ -1,4 +1,7 @@
 // Copyright 2022 UNN-IASR
+
+#ifndef INCLUDE_AUTOMATA_H_
+#define INCLUDE_AUTOMATA_H_
 #include <iostream>
 #include <string>
 #include <list>
@@ -25,3 +28,5 @@ public:
     void cook();
     void finish();
 };
+
+#endif  // INCLUDE_AUTOMATA_H_
