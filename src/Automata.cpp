@@ -59,20 +59,22 @@ void Automata::check() {
         std::cout << "Payment accepted. Please waitk." << std::endl;
     } else {
         std::cout << "Please insert more.";
-        state = WAIT;
+        state = CHECK;
         std::cout << std::endl;
     }
 }
 
 void Automata::cancel() {
-    cash = 0;
-    list.clear();
-    state = WAIT;
-    std::cout << "Order canceled. Please make a new selection." << std::endl;
+    if (state = CHECK) {
+        cash = 0;
+        list.clear();
+        state = CHECK;
+        std::cout << "Order canceled. Please make a new selection." << std::endl;
+    }
 }
 
 void Automata::cook() {
-    if (state = ACCEPT) {
+    if (state != CHECK) {
         std::cout << "Cooking your coffee..." << std::endl;
     } else {
         state = WAIT;
