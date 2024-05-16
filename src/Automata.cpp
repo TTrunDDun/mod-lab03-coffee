@@ -3,48 +3,48 @@
 #include <iostream>
 
 
-automata::automata() {
+Automata::Automata() {
     cash = 0;
     state = OFF;
 }
 
-void automata::on() {
-    state = wait;
+void Automata::on() {
+    state = WAIT;
     std::cout << "The Coffe Machin is working." << std::endl;
 }
 
-void automata::off() {
+void Automata::off() {
     state = OFF;
     std::cout << "Automata is turned off." << std::endl;
 }
 
-void automata::coin(int coins) {
-    if (state == wait || state == accept) {
+void Automata::coin(int coins) {
+    if (state == WAIT || state == ACCEPT) {
         std::cout << "Please,put the money." << std::endl;
         cash += coins;
-        state = accept;
+        state = ACCEPT;
         std::cout << "The balance: " << cash << std::endl;
     }
 }
-void automata::etmenu() {
+void Automata::etmenu() {
     std::cout << "Choose a coffee"<< std::endl << "Menu:" << std::endl;
     for (int i = 0; i < 7; i++) {
         std::cout << "(- " << menu[i] << ": price " << prices[i] << ")" << std::endl;
     }
 }
 
-void automata::getstate() {
+void Automata::getstate() {
     std::cout << "Current state: " << state << std::endl;
 }
 
-void automata::choice() {
+void Automata::choice() {
     std::string drink;
     std::cout << "Enter your choice: ";
     std::cin >> drink;
     list.push_front(drink);
 }
 
-void automata::check() {
+void Automata::check() {
     int total = 0;
     for (auto it = list.begin(); it != list.end(); ++it) {
         for (int i = 0; i < 7; i++) {
@@ -54,7 +54,7 @@ void automata::check() {
         }
     }
     if (cash >= total) {
-        state = accept;
+        state = ACCEPT;
         std::cout << "Payment accepted. Please wait for your drink." << std::endl;
     }
     else {
@@ -62,20 +62,20 @@ void automata::check() {
     }
 }
 
-void automata::cancel() {
+void Automata::cancel() {
     cash = 0;
     list.clear();
-    state = wait;
+    state = WAIT;
     std::cout << "Order canceled. Please make a new selection." << std::endl;
 }
 
-void automata::cook() {
+void Automata::cook() {
     std::cout << "Cooking your coffee..." << std::endl;
 }
 
-void automata::finish() {
+void Automata::finish() {
     cash = 0;
     list.clear();
-    state = wait;
+    state = WAIT;
     std::cout << "Thank you. Have a nice day!" << std::endl;
 }
