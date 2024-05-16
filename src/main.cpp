@@ -2,7 +2,7 @@
 #include "Automata.h"
 
 int main() {
-    automata d;
+    Automata d;
 
     d.on();
     d.etmenu();
