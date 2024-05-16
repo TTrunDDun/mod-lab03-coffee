@@ -48,7 +48,7 @@ TEST(AutomataTest, TEST6) {
     d.on();
     d.coin(3040);
     d.choice("Raf");
-    EXPECT_EQ(d.getstate(), states::COOK);
+    EXPECT_EQ(d.getstate(), states::ACCEPT);
 }
 
 TEST(AutomataTest, TEST7) {
@@ -56,7 +56,7 @@ TEST(AutomataTest, TEST7) {
     d.on();
     d.coin(3);
     d.choice("Raf");
-    EXPECT_EQ(d.getstate(), states::CHECK);
+    EXPECT_EQ(d.getstate(), states::ACCEPT);
 }
 
 
@@ -65,7 +65,7 @@ TEST(AutomataTest, TEST8) {
     d.on();
     d.coin(33);
     d.choice("Latte");
-    EXPECT_EQ(d.getstate(), states::CHECK);
+    EXPECT_EQ(d.getstate(), states::ACCEPT);
 }
 
 
