@@ -3,9 +3,9 @@
 #include <string>
 #include <list>
 
-enum states { OFF, wait, accept, check, cook };
+enum states { OFF, WAIT, ACCEPT, CHECK, COOK };
 
-class automata {
+class Automata {
 private:
     int cash;
     std::string menu[7] = { "Capuchino", "Raf", "Americano", "Latte", "Flat White", "Espresso", "Dopio" };
@@ -13,7 +13,7 @@ private:
     states state;
     std::list<std::string> list;
 public:
-    automata();
+    Automata();
     void on();
     void off();
     void coin(int coins);
