@@ -1,5 +1,5 @@
 // Copyright 2022 UNN-IASR
-#include "automata.h"
+#include "Automata.h"
 
 int main() {
     automata d;
