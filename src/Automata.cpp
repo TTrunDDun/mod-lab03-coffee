@@ -42,6 +42,7 @@ states Automata::getstate() {
 void Automata::choice(std::string drink) {
     std::cout << "Enter your choice: ";
     list.push_front(drink);
+    std::cout << drink << std::endl;
 }
 
 
@@ -55,7 +56,7 @@ void Automata::check() {
         }
     }
     if (cash >= total) {
-        state = ACCEPT;
+        state = COOK;
         std::cout << "Payment accepted. Please waitk." << std::endl;
     } else {
         std::cout << "Please insert more.";
@@ -65,19 +66,20 @@ void Automata::check() {
 }
 
 void Automata::cancel() {
-    if (state = CHECK) {
+    if ((state = CHECK) || (state = ACCEPT)) {
         cash = 0;
         list.clear();
-        state = CHECK;
-        std::cout << "Order canceled. New selection." << std::endl;
+        state = WAIT;
+        std::cout << "Order canceled. Make a new selection." << std::endl;
     }
 }
 
 void Automata::cook() {
     if (state != CHECK) {
         std::cout << "Cooking your coffee..." << std::endl;
-    } else {
         state = WAIT;
+    } else {
+        state = CHECK;
     }
 }
 
