@@ -71,7 +71,8 @@ void Automata::check() {
         state = ACCEPT;
         std::cout << "Payment accepted. Please wait for your drink." << std::endl;
     } else {std::cout << " Not enough money.";
-        std::cout << "Please insert more." << std::endl;
+        std::cout << "Please insert more.";
+        std::cout << std::endl;
     }
 }
 
