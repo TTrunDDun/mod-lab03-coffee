@@ -3,9 +3,9 @@
 #include <iostream>
 
 
-Automata::Automata() {
-    cash = 0;
-    state = OFF;
+Automata::Automata() : cash(0), state(states::OFF) {
+    std::string menu[7] = {"Capuchino", "Raf", "Americano", "Latte", "Flat White", "Espresso", "Dopio"};
+    int prices[7] = { 120, 150, 80, 140, 150, 50, 100 };
 }
 
 void Automata::on() {
